@@ -32,7 +32,7 @@ class _HomescreenState extends State<Homescreen> {
                   "assets/image.png",
                   fit: BoxFit.fill,
                 ),
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(15),
               ),
               height: 200,
               width: MediaQuery.sizeOf(context).width,
@@ -47,7 +47,7 @@ class _HomescreenState extends State<Homescreen> {
                         .withOpacity(1.0), // Adjust the opacity as needed
                   ],
                 ),
-                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20))
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15),bottomRight: Radius.circular(20))
               ),
             ),
             Container(

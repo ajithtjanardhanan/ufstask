@@ -70,6 +70,7 @@ class HorizontalListView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("₹ 5000",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
+                    SizedBox(width: MediaQuery.sizeOf(context).width/4.5,),
                     Container(child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -157,8 +158,10 @@ class HorizontalListView extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("₹ 5000",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
-                    Container(child: Row(
+                    Container(child: Text("₹ 5000",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),)),
+                    SizedBox(width: MediaQuery.sizeOf(context).width/4.5,),
+                    Container(alignment: Alignment.centerRight,
+                      child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Image.asset("assets/star.png"),
