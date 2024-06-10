@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:ufstask/BottomNavigationBar.dart';
 import 'package:ufstask/Header.dart';
+import 'package:ufstask/PopularCourses.dart';
 
-import 'Container4.dart';
+import 'LastContainer.dart';
+import 'Mentor.dart';
 import 'ContainerOET.dart';
 import 'ExploreButton.dart';
+import 'MockTest.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -17,17 +21,19 @@ class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomBar(),
       body: SingleChildScrollView(
           child: Container(
         child: Stack(
           children: [
             Container(
-              child: SizedBox(
-                  width: MediaQuery.sizeOf(context).width,
-                  child: Image.asset(
-                    "assets/image.png",
-                    fit: BoxFit.fill,
-                  )),
+              child: ClipRRect(
+                child: Image.asset(
+                  "assets/image.png",
+                  fit: BoxFit.fill,
+                ),
+                borderRadius: BorderRadius.circular(20),
+              ),
               height: 200,
               width: MediaQuery.sizeOf(context).width,
               decoration: BoxDecoration(
@@ -41,12 +47,16 @@ class _HomescreenState extends State<Homescreen> {
                         .withOpacity(1.0), // Adjust the opacity as needed
                   ],
                 ),
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20))
               ),
             ),
             Container(
               margin: EdgeInsets.only(top: 90),
-              child: Image.asset(
-                "assets/profilebg.png",
+              child: ClipRRect(
+                child: Image.asset(
+                  "assets/profilebg.png",
+                ),
+                  borderRadius: BorderRadius.circular(20)
               ),
             ),
             Container(
@@ -54,33 +64,12 @@ class _HomescreenState extends State<Homescreen> {
               child: Column(
                 children: [
                   Header(),
-                 Container(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Recently played',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                    ),
-                  ),
                   Containeroet(),
-                 SizedBox(
-                    height: 15,
-                  ),
                   Explorebutton(),
                   Container4(),
-
-                  // Container(
-                  //   margin: EdgeInsets.only(top: 15),
-                  //   alignment: Alignment.center,
-                  //   padding: EdgeInsets.fromLTRB(10, 12, 10, 12),
-                  //   width: MediaQuery.of(context).size.width,
-                  //   child: Text("Explore Courses"),
-                  //   decoration: BoxDecoration(
-                  //     color: Colors.blue,
-                  //     borderRadius: BorderRadius.circular(12)
-                  //   ),
-                  // ),
-
+                  MockTest(),
+                  PopularCourses(),
+                  Lastcontainer()
                 ],
               ),
             ),
